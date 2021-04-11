@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
+
+/*===== COLORS =====*/
+:root {
+    --color-primary: hsl(267,72%,63%);
+    --color-light-background: hsl(240,100%,99%);
+    --color-dark-background: hsl(329,9%,95%);
+    --color-secondary: hsl(194,100%,48%);
+    --color-primary-text: hsl(202,77%,6%);
+    --color-secondary-text: hsl(0,0%,82%);
+    --color-black: hsl(0,0%,0%);
+    --color-white: hsl(255,100%,100%);
+}
+
+/*===== FONTS =====*/
+:root {
+    --source-code-pro: 'Source Code Pro', monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--source-code-pro);
+    color: var(--color-primary-text);
+}
