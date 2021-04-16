@@ -1,27 +1,104 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
 
-/*===== COLORS =====*/
 :root {
-    --color-primary: hsl(267,72%,63%);
-    --color-light-background: hsl(240,100%,99%);
-    --color-dark-background: hsl(329,9%,95%);
-    --color-secondary: hsl(194,100%,48%);
-    --color-primary-text: hsl(202,77%,6%);
-    --color-secondary-text: hsl(0,0%,82%);
-    --color-black: hsl(0,0%,0%);
-    --color-white: hsl(255,100%,100%);
+  --header-height: 3rem;
+  --font-weight-semi: 600;
+  --font-weight-bold: 700;
 }
 
-/*===== FONTS =====*/
+/* COLOR */
 :root {
-    --source-code-pro: 'Source Code Pro', monospace;
+    --color-primary: hsl(276, 91%, 38%);
+    --color-primary-variant: hsl(276, 85%, 26%);
+    --color-secondary: hsl(326, 100%, 47%);
+    --color-secondary-variant:hsl(326, 95%, 35%);
+    --color-success: hsl(164, 95%, 43%);
+    --color-danger: hsl(42, 100%, 70%);
+    --color-error: hsl(346, 84%, 61%);
+    --color-background: hsl(0, 0%, 96%);
+    --color-background-dark: hsl(0, 0%, 93%);
+    --color-surface: hsl(255,100%,100%);
+    --color-on-primary: hsl(255,100%,100%);
+    --color-on-secondary: hsl(255,100%,100%);
+    --color-on-background: hsl(194, 51%, 8%);
+    --color-on-background-dark: hsl(194, 51%, 8%);
+    --color-on-surface: hsl(194, 51%, 8%);
+    --color-on-error: hsl(255,100%,100%);
+ }
+
+/* FONT */
+:root {
+    --font: 'Source Code Pro', monospace;
 }
 
-* {
-    box-sizing: border-box;
+/* Z-INDEX */
+:root {
+  --zi-1: 100;
+  --zi-2: 200;
 }
 
-body {
-    font-family: var(--source-code-pro);
-    color: var(--color-primary-text);
+/*===== LAYOUT =====*/
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--zi-2);
+  background-color: var(--color-background-dark);
+}
+
+/*===== NAV =====*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav__menu {
+      position: fixed;
+      top: var(--header-height);
+      right: -100%;
+      width: 80%;
+      height: 100%;
+      padding: 2rem;
+      background-color: var(--color-background);
+      transition: .5s;
+    }
+  }
+
+.nav__list {
+  background: var(--color-background);
+}
+
+.nav__item {
+    margin: 0 0 2rem 0;
+}
+
+.nav__link {
+  color: var(--color-on-surface);
+  font-weight: var(--font-weight-semi);
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+}
+
+.nav__logo {
+  font-weight: var(--font-bold);
+}
+
+.nav__toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Menu status */
+.show {
+  right: 0;
+}
+
+.active {
+  color: var(--color-primary);
 }
