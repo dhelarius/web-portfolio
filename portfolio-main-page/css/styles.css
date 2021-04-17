@@ -9,38 +9,47 @@
 
 /* COLOR */
 :root {
-    --color-primary: hsl(276, 91%, 38%);
-    --color-primary-variant: hsl(276, 85%, 26%);
-    --color-secondary: hsl(326, 100%, 47%);
-    --color-secondary-variant:hsl(326, 95%, 35%);
-    --color-success: hsl(164, 95%, 40%);
-    --color-danger: hsl(42, 100%, 67%);
-    --color-error: hsl(346, 84%, 58%);
-    --color-background: hsl(0, 0%, 96%);
-    --color-background-dark: hsl(0, 0%, 93%);
-    --color-surface: hsl(255,100%,100%);
-    --color-on-primary: hsl(255,100%,100%);
-    --color-on-secondary: hsl(255,100%,100%);
-    --color-on-background: hsl(194, 51%, 8%);
-    --color-on-background-dark: hsl(194, 51%, 8%);
-    --color-on-surface: hsl(194, 51%, 8%);
-    --color-on-error: hsl(255,100%,100%);
+  --color-primary: hsl(276, 91%, 38%);
+  --color-primary-variant: hsl(276, 85%, 26%);
+  --color-secondary: hsl(326, 100%, 47%);
+  --color-secondary-variant:hsl(326, 95%, 35%);
+  --color-success: hsl(164, 95%, 40%);
+  --color-danger: hsl(42, 100%, 67%);
+  --color-error: hsl(346, 84%, 58%);
+  --color-background: hsl(0, 0%, 96%);
+  --color-background-dark: hsl(0, 0%, 93%);
+  --color-surface: hsl(255,100%,100%);
+  --color-on-primary: hsl(255,100%,100%);
+  --color-on-secondary: hsl(255,100%,100%);
+  --color-on-background: hsl(194, 51%, 8%);
+  --color-on-background-dark: hsl(194, 51%, 8%);
+  --color-on-surface: hsl(194, 51%, 8%);
+  --color-on-error: hsl(255,100%,100%);
+  --color-on-background-light: hsl(0, 0%, 50%);
  }
 
 /* FONT */
 :root {
-    --font: 'Source Code Pro', monospace;
-    --font-size-xs: 0.5rem; 
-    --font-size-sm: 1rem;
-    --font-size: 1.5rem;
-    --font-size-lg: 2rem;
-    --font-size-xl: 2.5rem; 
+  --font: 'Source Code Pro', monospace;
+  --font-size-xs: .8rem; 
+  --font-size-sm: 1rem;
+  --font-size: 1.5rem;
+  --font-size-lg: 2rem;
+  --font-size-xl: 2.5rem; 
 }
 
 /* Z-INDEX */
 :root {
   --zi-1: 100;
   --zi-2: 200;
+}
+
+button {
+  font-size: var(--font-size-sm);
+}
+
+section {
+  padding-top: var(--header-height);
 }
 
 /*===== LAYOUT =====*/
@@ -88,6 +97,7 @@
 
 .nav__link {
   color: var(--color-on-surface);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-small);
 }
 
@@ -98,6 +108,7 @@
 .nav__logo {
   font-size: var(--font-size);
   font-weight: var(--font-bold);
+  letter-spacing: .3rem;
 }
 
 .nav__toggle {
@@ -112,6 +123,46 @@
 
 .active {
   color: var(--color-primary);
+}
+
+/*===== HOME =====*/
+.home {
+  background-color: var(--color-background-dark);
+}
+
+.home__container {
+  height: calc(100vh - var(--header-height));
+}
+
+.home__data {
+  padding-top: 1rem;
+  transition: .5s;
+}
+
+.home__name {
+  font-size: var(--font-size);
+}
+
+.home__description {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semi);
+  line-height: 1.3;
+}
+
+.home__stat {
+  font-size: var(--font-size-xs);
+}
+
+.home__button {
+  margin-top: 22px;
+}
+
+.home__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 220px;
+  transition: .2s;
 }
 
 @media screen and (min-width: 768px) {
@@ -143,4 +194,18 @@
   .nav__toggle {
     display: none;
   }
+
+  .home__data {
+    padding: 0;
+    align-self: center;
+  }
+
+  .home__img {
+    right: 10%;
+    width: 360px;
+  }
+}
+
+.md-border-radius {
+  border-radius: .625rem;
 }
