@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap');
 
 :root {
-  --header-height: 3rem;
+  --header-height: 6rem;
+  --font-weight-small: 400;
   --font-weight-semi: 600;
   --font-weight-bold: 700;
 }
@@ -12,9 +13,9 @@
     --color-primary-variant: hsl(276, 85%, 26%);
     --color-secondary: hsl(326, 100%, 47%);
     --color-secondary-variant:hsl(326, 95%, 35%);
-    --color-success: hsl(164, 95%, 43%);
-    --color-danger: hsl(42, 100%, 70%);
-    --color-error: hsl(346, 84%, 61%);
+    --color-success: hsl(164, 95%, 40%);
+    --color-danger: hsl(42, 100%, 67%);
+    --color-error: hsl(346, 84%, 58%);
     --color-background: hsl(0, 0%, 96%);
     --color-background-dark: hsl(0, 0%, 93%);
     --color-surface: hsl(255,100%,100%);
@@ -29,6 +30,11 @@
 /* FONT */
 :root {
     --font: 'Source Code Pro', monospace;
+    --font-size-xs: 0.5rem; 
+    --font-size-sm: 1rem;
+    --font-size: 1.5rem;
+    --font-size-lg: 2rem;
+    --font-size-xl: 2.5rem; 
 }
 
 /* Z-INDEX */
@@ -47,26 +53,30 @@
   background-color: var(--color-background-dark);
 }
 
+.btn:hover {
+  box-shadow: 1px 17px 14px -11px hsla(0, 0%, 0%, 0.20);
+}
+
 /*===== NAV =====*/
 .nav {
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  @media screen and (max-width: 768px) {
-    .nav__menu {
-      position: fixed;
-      top: var(--header-height);
-      right: -100%;
-      width: 80%;
-      height: 100%;
-      padding: 2rem;
-      background-color: var(--color-background);
-      transition: .5s;
-    }
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    padding: 2rem;
+    background-color: var(--color-background);
+    transition: .5s;
   }
+}
 
 .nav__list {
   background: var(--color-background);
@@ -78,7 +88,7 @@
 
 .nav__link {
   color: var(--color-on-surface);
-  font-weight: var(--font-weight-semi);
+  font-weight: var(--font-weight-small);
 }
 
 .nav__link:hover {
@@ -86,6 +96,7 @@
 }
 
 .nav__logo {
+  font-size: var(--font-size);
   font-weight: var(--font-bold);
 }
 
@@ -101,4 +112,35 @@
 
 .active {
   color: var(--color-primary);
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    height: calc(var(--header-height) + 1rem);
+    justify-content: initial;
+  }
+
+  .nav__menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    background: var(--color-background-dark);
+  }
+
+  .nav__list {
+    display: flex;
+    background: var(--color-background-dark);
+  }
+
+  .nav__item {
+    margin: 0 0 0 3rem;
+  }
+
+  .nav__btn {
+    margin: 0 0 0 3rem;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
 }
