@@ -25,7 +25,7 @@
   --color-on-background-dark: hsl(194, 51%, 8%);
   --color-on-surface: hsl(194, 51%, 8%);
   --color-on-error: hsl(255,100%,100%);
-  --color-on-background-light: hsl(0, 0%, 50%);
+  --color-on-background-light: hsl(0, 0%, 40%);
  }
 
 /* FONT */
@@ -42,6 +42,7 @@
 :root {
   --zi-1: 100;
   --zi-2: 200;
+  --zi-3: 300;
 }
 
 button {
@@ -58,8 +59,26 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--zi-2);
+  z-index: var(--zi-3);
   background-color: var(--color-background-dark);
+}
+
+/* SECTION */
+.section__title {
+  font-size: var(--font-size);
+}
+
+.section__title-back {
+  z-index: var(--zi-1);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-background-dark);
+}
+
+.section__title-front {
+  z-index: var(--zi-2);
+  position: relative;
+  bottom: 53px;
 }
 
 .btn:hover {
@@ -165,6 +184,59 @@ section {
   transition: .2s;
 }
 
+/*--- SERVICES ---*/
+.services {
+  background-color: var(--color-background);
+}
+
+.services__container {
+  justify-items: center;
+}
+
+/* CARD */
+.card {
+  max-width: 280px;
+  height: 280px;
+  background: var(--color-background);
+  box-shadow: none;
+}
+
+.card:hover {
+  background: var(--color-primary);
+  box-shadow: 1px 17px 14px -11px hsla(0, 0%, 0%, 0.20);
+  transition: .3s;
+}
+
+.card:hover * {
+  color: var(--color-surface);
+}
+
+.card__icon {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.card__title {
+  color: var(--color-on-surface);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semi);
+  margin: 1.5rem 0 .5rem 0;
+}
+
+.card__underline {
+  margin: 0 0 1.5rem 0;
+  border-style: solid;
+  color: var(--color-primary);
+  width: 42px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card__description {
+  font-size: var(--font-size-xs);
+  color: var(--color-on-background-light);
+}
+
 @media screen and (min-width: 768px) {
   .nav {
     height: calc(var(--header-height) + 1rem);
@@ -201,7 +273,7 @@ section {
   }
 
   .home__img {
-    right: 10%;
+    right: 15%;
     width: 360px;
   }
 }
