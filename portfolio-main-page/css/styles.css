@@ -278,6 +278,13 @@ section {
   }
 }
 
+@media screen and (min-width: 1360px) {
+  .home__img {
+    right: 17%;
+    width: 480px;
+  }
+}
+
 .md-border-radius {
   border-radius: .625rem;
 }
