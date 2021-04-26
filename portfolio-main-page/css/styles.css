@@ -34,7 +34,7 @@
 /* FONT */
 :root {
   --font: 'Source Code Pro', monospace;
-  --font-size-xs: .8rem; 
+  --font-size-xs: .9rem; 
   --font-size-sm: 1rem;
   --font-size: 1.5rem;
   --font-size-lg: 2rem;
@@ -186,6 +186,7 @@ section {
 
 .home__stat {
   font-size: var(--font-size-xs);
+  color: var(--color-grey);
 }
 
 .home__button {
@@ -250,7 +251,7 @@ section {
 
 .service__description {
   font-size: var(--font-size-xs);
-  color: var(--color-on-background-light);
+  color: var(--color-grey);
 }
 
 /*--- PORTFOLIO ---*/
@@ -295,6 +296,27 @@ section {
   object-fit: cover;
 }
 
+/* REPOSITORY */
+.repository__container {
+  text-align: center;
+}
+
+.repository__title {
+  font-size: var(--font-size);
+}
+
+.repository__description {
+  font-size: var(--font-size-xs);
+  color: var(--color-grey);
+  text-align: justify;
+  padding: 0 .9375rem;
+}
+
+.repository__btn {
+  margin: 1.25rem 0 0 0;
+}
+
+
 @media screen and (min-width: 768px) {
   .nav {
     height: calc(var(--header-height) + 1rem);
@@ -333,6 +355,28 @@ section {
   .home__img {
     right: 15%;
     width: 360px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  /* REPOSITORY */
+  .repository__container {
+    text-align: initial;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .repository__data {
+    width: 80%;
+  }
+
+  .repository__description {
+    padding: 0;
+  }
+
+  .repository__btn {
+    margin: 0;
   }
 }
 
