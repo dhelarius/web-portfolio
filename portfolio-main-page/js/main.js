@@ -12,7 +12,7 @@ const showMenu = (toggleId, navId) => {
 
 showMenu('nav__toggle','nav__menu');
 
-/*===== REMOVE MENU MOBILE =====*/
+/* REMOVE MENU MOBILE */
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction() {
@@ -26,3 +26,30 @@ function linkAction() {
 } 
 
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
+
+
+/*===== MODAL =====*/
+// Get the modal
+let modal = document.getElementById("modal-screen")
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+let images = document.getElementsByClassName("portfolio__img")
+let modalImg = document.getElementById("modal-img")
+let captionText = document.getElementById("modal-caption")
+
+for (let i = 0; i < images.length; i++) {
+    images[i].onclick = function () {
+        modal.style.display = "block"
+        modalImg.src = this.src
+        captionText.innerHTML = this.alt
+    }
+}
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("modal__close")[0]
+
+// When the user clicks on close icon (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none"
+}

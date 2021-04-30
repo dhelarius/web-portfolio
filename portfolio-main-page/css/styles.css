@@ -12,33 +12,33 @@
   --color-primary: hsl(276, 91%, 38%);
   --color-primary-variant: hsl(276, 85%, 26%);
   --color-secondary: hsl(326, 100%, 47%);
-  --color-secondary-variant:hsl(326, 95%, 35%);
+  --color-secondary-variant: hsl(326, 95%, 35%);
   --color-success: hsl(164, 95%, 40%);
   --color-danger: hsl(42, 100%, 67%);
   --color-error: hsl(346, 84%, 58%);
   --color-background: hsl(0, 0%, 96%);
   --color-background-dark: hsl(0, 0%, 93%);
-  --color-surface: hsl(255,100%,100%);
-  --color-on-primary: hsl(255,100%,100%);
-  --color-on-secondary: hsl(255,100%,100%);
+  --color-surface: hsl(255, 100%, 100%);
+  --color-on-primary: hsl(255, 100%, 100%);
+  --color-on-secondary: hsl(255, 100%, 100%);
   --color-on-background: hsl(194, 51%, 8%);
   --color-on-background-dark: hsl(194, 51%, 8%);
   --color-on-surface: hsl(194, 51%, 8%);
-  --color-on-error: hsl(255,100%,100%);
-  
-  
+  --color-on-error: hsl(255, 100%, 100%);
+
+
   --color-grey: hsl(0, 0%, 40%);
   --color-soft-grey: hsl(0, 0%, 90%);
- }
+}
 
 /* FONT */
 :root {
   --font: 'Source Code Pro', monospace;
-  --font-size-xs: .9rem; 
+  --font-size-xs: .9rem;
   --font-size-sm: 1rem;
   --font-size: 1.5rem;
   --font-size-lg: 2rem;
-  --font-size-xl: 2.5rem; 
+  --font-size-xl: 2.5rem;
 }
 
 /* Z-INDEX */
@@ -127,7 +127,7 @@ section {
 }
 
 .nav__item {
-    margin: 0 0 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .nav__link {
@@ -316,6 +316,105 @@ section {
   margin: 1.25rem 0 0 0;
 }
 
+/*--- MODAL ---*/
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: var(--zi-3);
+  /* Sit on top */
+  padding: 100px 0 0 0;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background: var(--color-primary);
+  /* Fallback color */
+  background: hsla(276, 91%, 38%, .7);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal__content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#modal-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: var(--color-soft-grey);
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* ANIMATION */
+.modal__content,
+#modal-caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* CLOSE BUTTON */
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: var(--color-surface);
+  font-size: 40px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  color: var(--color-soft-grey);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*--- MEDIA QUERIES ---*/
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .nav {
@@ -359,6 +458,7 @@ section {
 }
 
 @media screen and (min-width: 992px) {
+
   /* REPOSITORY */
   .repository__container {
     text-align: initial;
@@ -389,4 +489,10 @@ section {
 
 .custom-br {
   border-radius: .625rem;
+}
+
+.focusable:hover {
+  opacity: .7;
+  transition: .3s;
+  background: hsla(0, 0%, 0%, 0);
 }
